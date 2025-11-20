@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+      * {
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0px;
+        height: 100%;
+      }
+      button:focus-visible {
+        outline: 2px solid #4a90e2 !important;
+        outline: -webkit-focus-ring-color auto 5px !important;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      .email-verification {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0px 75px;
+        position: relative;
+        background-color: #e4e4e4;
+      }
+
+      .email-verification .frame {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0px 75px;
+        position: relative;
+        flex: 0 0 auto;
+        background-color: #ffffff;
+      }
+
+      .email-verification .div {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 50px;
+        padding: 50px 0px 0px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .email-verification .frame-2 {
+        display: flex;
+        width: 500px;
+        height: 100px;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      .email-verification .logo-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 175px;
+        height: 60px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: relative;
+      }
+
+      .email-verification .logo {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .email-verification .path {
+        position: absolute;
+        width: 21.66%;
+        height: 22.31%;
+        top: 38.84%;
+        left: 0;
+      }
+
+      .email-verification .rectangle {
+        top: 77.70%;
+        position: absolute;
+        width: 10.83%;
+        height: 22.30%;
+        left: 5.42%;
+      }
+
+      .email-verification .img {
+        top: 0;
+        position: absolute;
+        width: 10.83%;
+        height: 22.30%;
+        left: 5.42%;
+      }
+
+      .email-verification .group {
+        position: absolute;
+        width: 72.95%;
+        height: 66.95%;
+        top: 16.03%;
+        left: 27.05%;
+      }
+
+      .email-verification .powered-by-COVORO {
+        position: relative;
+        width: 139.58px;
+        height: 39.86px;
+      }
+
+      .email-verification .verify-your-email-to-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .email-verification .verify-your-email-to {
+        position: relative;
+        width: 500px;
+        margin-top: -1.00px;
+        font-family: "Helvetica-Regular", Helvetica;
+        font-weight: 400;
+        color: #002444;
+        font-size: 24px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .email-verification .sign-up-complete {
+        position: relative;
+        width: 550px;
+        height: 180.74px;
+      }
+
+      .email-verification .frame-3 {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        align-items: flex-start;
+        gap: 30px;
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .email-verification .frame-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .email-verification .frame-5 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .email-verification .frame-6 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .email-verification .text-wrapper {
+        position: relative;
+        align-self: stretch;
+        margin-top: -1.00px;
+        font-family: "Helvetica-Regular", Helvetica;
+        font-weight: 400;
+        color: #002444;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .email-verification .p {
+        position: relative;
+        align-self: stretch;
+        font-family: "Helvetica-Regular", Helvetica;
+        font-weight: 400;
+        color: #002444;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 27px;
+      }
+
+      .email-verification .button-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 32px;
+        position: relative;
+        flex: 0 0 auto;
+        background-color: #3e8ff8;
+        border-radius: 29px;
+      }
+
+      .email-verification .button {
+        position: relative;
+        width: fit-content;
+        margin-top: -1.00px;
+        font-family: "Helvetica-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+      }
+
+      .email-verification .text-wrapper-2 {
+        position: relative;
+        align-self: stretch;
+        margin-top: -1.00px;
+        font-family: "Helvetica-Bold", Helvetica;
+        font-weight: 700;
+        color: #002444;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .email-verification .frame-7 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .email-verification .text-wrapper-3 {
+        position: relative;
+        align-self: stretch;
+        font-family: "Helvetica-Regular", Helvetica;
+        font-weight: 400;
+        color: #002444;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .email-verification .please-contact-us {
+        position: relative;
+        align-self: stretch;
+        margin-top: -1.00px;
+        font-family: "Helvetica-Regular", Helvetica;
+        font-weight: 400;
+        color: transparent;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 18px;
+      }
+
+      .email-verification .span {
+        color: #002444;
+        line-height: 27px;
+      }
+
+      .email-verification .text-wrapper-4 {
+        color: #3e8ff8;
+        line-height: 27px;
+        text-decoration: underline;
+      }
+
+      .email-verification .cheers-team-COVORO {
+        position: relative;
+        align-self: stretch;
+        margin-top: -1.00px;
+        font-family: "Helvetica-Regular", Helvetica;
+        font-weight: 400;
+        color: #002444;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 27px;
+      }
+
+      .email-verification .frame-8 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .email-verification .div-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+      }
+
+      .email-verification .div-wrapper .logo {
+        max-width: 175px;
+        max-height: 60px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .email-verification .frame-9 {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 50px 100px;
+        position: relative;
+        flex: 0 0 auto;
+        margin-left: -100.00px;
+        margin-right: -100.00px;
+        background-color: #f5f5f5;
+      }
+
+      .email-verification .component {
+        position: relative;
+        width: 99px;
+        height: 25px;
+      }
+
+      .email-verification .group-2 {
+        position: absolute;
+        width: 25.25%;
+        height: 100%;
+        top: 0;
+        left: 37.37%;
+      }
+
+      .email-verification .group-3 {
+        position: absolute;
+        width: 25.25%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .email-verification .group-4 {
+        position: absolute;
+        width: 25.25%;
+        height: 100%;
+        top: 0;
+        left: 74.75%;
+      }
+
+      .email-verification .COVOROTM-is-a {
+        position: relative;
+        width: 500px;
+        height: 32px;
+      }
+
+      .email-verification .span-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 87.50%;
+        top: 0;
+        left: 0;
+        font-family: "Helvetica-Regular", Helvetica;
+        font-weight: 400;
+        color: #002444;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .email-verification .text-wrapper-5 {
+        font-family: "Helvetica-Regular", Helvetica;
+        font-weight: 400;
+        color: #002444;
+        font-size: 12px;
+        letter-spacing: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-verification">
+      <div class="frame">
+        <div class="div">
+          <div class="frame-2">
+            <div class="logo-wrapper">
+              <div class="logo">
+                <img class="path" src="https://c.animaapp.com/mi7d68unwpPv78/img/path-6205.svg" />
+                <img class="rectangle" src="https://c.animaapp.com/mi7d68unwpPv78/img/rectangle-15216.svg" />
+                <img class="img" src="https://c.animaapp.com/mi7d68unwpPv78/img/rectangle-15216.svg" />
+                <img class="group" src="https://c.animaapp.com/mi7d68unwpPv78/img/group-15618-1.png" />
+              </div>
+            </div>
+            <img
+              class="powered-by-COVORO"
+              src="https://c.animaapp.com/mi7d68unwpPv78/img/powered-by-covoro-agentic-ai--1--4.png"
+            />
+          </div>
+          <div class="verify-your-email-to-wrapper">
+            <p class="verify-your-email-to">Verify Your Email To Get Started</p>
+          </div>
+        </div>
+        <img class="sign-up-complete" src="https://c.animaapp.com/mi7d68unwpPv78/img/sign-up-complete.svg" />
+        <div class="frame-3">
+          <div class="frame-4">
+            <div class="frame-5">
+              <div class="frame-6">
+                <div class="text-wrapper">Hi <First Name>,</div>
+                <p class="p">Welcome to <COVORO> - you're just one step away from accessing your account!</p>
+              </div>
+              <p class="p">
+                To start using your <COVORO> dashboard and unlock all features, please verify your email address
+                by clicking the button below.
+              </p>
+            </div>
+            <div class="button-wrapper"><div class="button">Verify My Email</div></div>
+            <div class="frame-6">
+              <p class="text-wrapper-2">What happens once you verify:</p>
+              <div class="frame-7">
+                <div class="text-wrapper">Access your personalized dashboard</div>
+                <p class="text-wrapper-3">Use all available features seamlessly</p>
+                <div class="text-wrapper-3">Manage your account effortlessly</div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-5">
+            <div class="frame-5">
+              <p class="please-contact-us">
+                <span class="span">Please </span>
+                <span class="text-wrapper-4">contact us</span>
+                <span class="span"> with any questions, we're always happy to help.</span>
+              </p>
+              <div class="frame-6">
+                <div class="cheers-team-COVORO">Cheers,<br />Team <COVORO></div>
+              </div>
+            </div>
+            <div class="frame-8">
+              <div class="div-wrapper">
+                <div class="logo">
+                  <img class="path" src="https://c.animaapp.com/mi7d68unwpPv78/img/path-6205.svg" />
+                  <img class="rectangle" src="https://c.animaapp.com/mi7d68unwpPv78/img/rectangle-15216.svg" />
+                  <img class="img" src="https://c.animaapp.com/mi7d68unwpPv78/img/rectangle-15216.svg" />
+                  <img class="group" src="https://c.animaapp.com/mi7d68unwpPv78/img/group-15618-2.png" />
+                </div>
+              </div>
+              <div class="frame-9">
+                <div class="component">
+                  <img class="group-2" src="https://c.animaapp.com/mi7d68unwpPv78/img/group-166-1.png" />
+                  <img class="group-3" src="https://c.animaapp.com/mi7d68unwpPv78/img/group-167-1.png" />
+                  <img class="group-4" src="https://c.animaapp.com/mi7d68unwpPv78/img/group-168-1.png" />
+                </div>
+                <div class="COVOROTM-is-a">
+                  <p class="span-wrapper">
+                    <span class="text-wrapper-5"
+                      >COVOROTM is a trademark of Perennial Systems. <br />All rights reserved. © Copyright of Perennial
+                      Systems. 2006-2025</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
